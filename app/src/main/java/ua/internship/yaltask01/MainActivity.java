@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     TextView mTextResponsible2;
     TextView mTextResponsible;
     TextView mTextTitle;
-    ImageView mImageView;
 
     private Toolbar mToolbar;
     private RecyclerView mRecyclerView;
@@ -73,12 +72,14 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(linearLayoutManager);
 
         initializeData();
-        initializeAdapter();
+
+        final RVAdapter adapter = new RVAdapter(mImages);
+        mRecyclerView.setAdapter(adapter);
 
         mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), mRecyclerView, new ClickListener() {
             @Override
             public void onClick(View view, int position) {
-                Toast.makeText(getApplicationContext(), "RecyclerView with ImageViews", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), adapter.getItem(position), Toast.LENGTH_SHORT).show();
             }
         }));
 
@@ -93,9 +94,6 @@ public class MainActivity extends AppCompatActivity {
         mTextResponsible = (TextView) findViewById(R.id.text_res);
         mTextResponsible2 = (TextView) findViewById(R.id.text_res2);
         mTextTitle = (TextView) findViewById(R.id.title);
-        mImageView = (ImageView) findViewById(R.id.pic1);
-
-
 
         View.OnClickListener onClickListener = new View.OnClickListener(){
             @Override
@@ -130,10 +128,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /** Initialize recycler view adapter.  */
-    private void initializeAdapter(){
-        RVAdapter adapter = new RVAdapter(mImages);
-        mRecyclerView.setAdapter(adapter);
-    }
+    //private void initializeAdapter(){
+    //    RVAdapter adapter = new RVAdapter(mImages);
+    //    mRecyclerView.setAdapter(adapter);
+    //}
 
     public interface ClickListener {
         void onClick(View view, int position);

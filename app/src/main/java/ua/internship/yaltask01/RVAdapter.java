@@ -58,4 +58,8 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ImageViewHolder> {
     public int getItemCount() {
         return images.size();
     }
+
+    public String getItem(int i) {
+        return "ImageView " + i;
+    }
 }
