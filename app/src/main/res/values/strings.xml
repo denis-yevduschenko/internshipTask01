@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">YalTask01</string>
+    <string name="text_description">
+        Open hatch (near the billboard), the area of turning of trams 18 and 19 in
+        Mira Avenue from the Donetsk highway.</string>
+    <string name="text_status">In work</string>
+    <string name="text_title">Municipal services</string>
+    <string name="date_create">15 march 2016</string>
+    <string name="date_reg">16 march 2016</string>
+    <string name="date_ass">21 march 2016</string>
+    <string name="text_create">Created</string>
+    <string name="text_reg">Registered</string>
+    <string name="text_ass">Assigned</string>
+    <string name="text_responsible">Responsible</string>
+    <string name="text_responsible2">Dnipro MVK ( )</string>
+</resources>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">YalTask01</string>
+    <string name="text_description">
+        Відкритий люк (біля рекламного щита), район повороту 18 і 19
+        трамваїв на проспект Миру з Донецького шосе.</string>
+    <string name="text_status">В роботі</string>
+    <string name="text_title">Комунальне господарство</string>
+    <string name="date_create">15 березня 2016</string>
+    <string name="date_reg">16 березня 2016</string>
+    <string name="date_ass">21 березня 2016</string>
+    <string name="text_create">Створено</string>
+    <string name="text_reg">Зареєстровано</string>
+    <string name="text_ass">Вирішити до</string>
+    <string name="text_responsible">Відповідальний</string>
+    <string name="text_responsible2">Дніпропетровський МВК()</string>
+</resources>
