@@ -18,9 +18,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+//[Comment] Very bad design. Wrong color, wrong text sizes.
+//[Comment] Also you have a big memory leak
 public class MainActivity extends AppCompatActivity {
 
-    TextView mTextAssignedDate;
+    TextView mTextAssignedDate; //[Comment] wrong visibility modifiers
     TextView mTextAssigned;
     TextView mTextCreateDate;
     TextView mTextCreate;
@@ -63,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         mToolbar = (Toolbar)findViewById(R.id.myToolbar);
         setSupportActionBar(mToolbar);
         //Show back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //[Comment] It can be null
 
 
         mRecyclerView =(RecyclerView)findViewById(R.id.rv);
@@ -130,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
     /** Initialize recycler view adapter.  */
     //private void initializeAdapter(){
     //    RVAdapter adapter = new RVAdapter(mImages);
-    //    mRecyclerView.setAdapter(adapter);
+    //    mRecyclerView.setAdapter(adapter); Commented code
     //}
 
     public interface ClickListener {
