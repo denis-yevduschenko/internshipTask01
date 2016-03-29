@@ -1,7 +1,6 @@
 package ua.internship.yaltask01;
 
 import android.content.Context;
-import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -78,12 +76,6 @@ public class MainActivity extends AppCompatActivity {
         final RVAdapter adapter = new RVAdapter(mImages);
         mRecyclerView.setAdapter(adapter);
 
-        mRecyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), mRecyclerView, new ClickListener() {
-            @Override
-            public void onClick(View view, int position) {
-                Toast.makeText(getApplicationContext(), adapter.getItem(position), Toast.LENGTH_SHORT).show();
-            }
-        }));
 
         mTextAssignedDate = (TextView) findViewById(R.id.date_ass);
         mTextAssigned = (TextView) findViewById(R.id.text_ass);
@@ -123,49 +115,12 @@ public class MainActivity extends AppCompatActivity {
     /** Adds pictures in collection. */
     private void initializeData(){
         mImages = new ArrayList<>();
-        mImages.add(new Image(R.drawable.firstpic, R.drawable.fourthpic));
-        mImages.add(new Image(R.drawable.secondpic, R.drawable.fivthpic));
-        mImages.add(new Image(R.drawable.thirdpic, R.drawable.sixthpic));
+        mImages.add(new Image(R.drawable.firstpic));
+        mImages.add(new Image(R.drawable.fourthpic));
+        mImages.add(new Image(R.drawable.secondpic));
+        mImages.add(new Image(R.drawable.fivthpic));
+        mImages.add(new Image(R.drawable.thirdpic));
+        mImages.add(new Image(R.drawable.sixthpic));
 
     }
-
-    public interface ClickListener {
-        void onClick(View view, int position);
-    }
-
-    public static class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
-
-        private GestureDetector gestureDetector;
-        private MainActivity.ClickListener clickListener;
-
-        public RecyclerTouchListener(Context context, final RecyclerView recyclerView, final MainActivity.ClickListener clickListener) {
-            this.clickListener = clickListener;
-            gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
-                @Override
-                public boolean onSingleTapUp(MotionEvent e) {
-                    return true;
-                }
-            });
-        }
-
-        @Override
-        public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
-
-            View child = rv.findChildViewUnder(e.getX(), e.getY());
-            if (child != null && clickListener != null && gestureDetector.onTouchEvent(e)) {
-                clickListener.onClick(child, rv.getChildPosition(child));
-            }
-            return false;
-        }
-
-        @Override
-        public void onTouchEvent(RecyclerView rv, MotionEvent e) {
-        }
-
-        @Override
-        public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
-        }
-    }
-
 }
