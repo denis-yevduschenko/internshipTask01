@@ -28,7 +28,7 @@
     </style>
 
     <style name="MyStyle.Grey">
-        <item name="android:textColor">#717171</item>
+        <item name="android:textColor">#808080</item>
         <item name="android:gravity">left</item>
     </style>
 

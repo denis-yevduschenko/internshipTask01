@@ -44,8 +44,8 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ImageViewHolder> {
     @Override
     public ImageViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cardview, viewGroup, false);
-        ImageViewHolder pvh = new ImageViewHolder(v);
-        return pvh;
+        ImageViewHolder imageViewHolder = new ImageViewHolder(v);
+        return imageViewHolder;
     }
 
     @Override

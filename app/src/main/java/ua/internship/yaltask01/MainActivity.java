@@ -1,6 +1,7 @@
 package ua.internship.yaltask01;
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -20,17 +21,17 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView mTextAssignedDate;
-    TextView mTextAssigned;
-    TextView mTextCreateDate;
-    TextView mTextCreate;
-    TextView mTextRegisterDate;
-    TextView mTextRegister;
-    TextView mTextDescription;
-    TextView mTextStatus;
-    TextView mTextResponsible2;
-    TextView mTextResponsible;
-    TextView mTextTitle;
+    private TextView mTextAssignedDate;
+    private TextView mTextAssigned;
+    private TextView mTextCreateDate;
+    private TextView mTextCreate;
+    private TextView mTextRegisterDate;
+    private TextView mTextRegister;
+    private TextView mTextDescription;
+    private TextView mTextStatus;
+    private TextView mTextResponsible2;
+    private TextView mTextResponsible;
+    private TextView mTextTitle;
 
     private Toolbar mToolbar;
     private RecyclerView mRecyclerView;
@@ -63,8 +64,9 @@ public class MainActivity extends AppCompatActivity {
         mToolbar = (Toolbar)findViewById(R.id.myToolbar);
         setSupportActionBar(mToolbar);
         //Show back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        if(getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         mRecyclerView =(RecyclerView)findViewById(R.id.rv);
 
@@ -126,12 +128,6 @@ public class MainActivity extends AppCompatActivity {
         mImages.add(new Image(R.drawable.thirdpic, R.drawable.sixthpic));
 
     }
-
-    /** Initialize recycler view adapter.  */
-    //private void initializeAdapter(){
-    //    RVAdapter adapter = new RVAdapter(mImages);
-    //    mRecyclerView.setAdapter(adapter);
-    //}
 
     public interface ClickListener {
         void onClick(View view, int position);
