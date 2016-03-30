@@ -1,15 +1,12 @@
 package ua.internship.yaltask01;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,19 +16,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextAssignedDate;
-    private TextView mTextAssigned;
-    private TextView mTextCreateDate;
-    private TextView mTextCreate;
-    private TextView mTextRegisterDate;
-    private TextView mTextRegister;
-    private TextView mTextDescription;
-    private TextView mTextStatus;
-    private TextView mTextResponsible2;
-    private TextView mTextResponsible;
-    private TextView mTextTitle;
-
-    private Toolbar mToolbar;
     private RecyclerView mRecyclerView;
     private List<Image> mImages;
 
@@ -59,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Add mToolbar to the activity
-        mToolbar = (Toolbar)findViewById(R.id.myToolbar);
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.myToolbar);
         setSupportActionBar(mToolbar);
         //Show back button
         if(getSupportActionBar() != null) {
@@ -72,22 +56,20 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(linearLayoutManager);
 
         initializeData();
-
-        final RVAdapter adapter = new RVAdapter(mImages);
-        mRecyclerView.setAdapter(adapter);
+        initializeAdapter();
 
 
-        mTextAssignedDate = (TextView) findViewById(R.id.date_ass);
-        mTextAssigned = (TextView) findViewById(R.id.text_ass);
-        mTextCreateDate = (TextView) findViewById(R.id.date_create);
-        mTextCreate = (TextView) findViewById(R.id.text_create);
-        mTextRegisterDate = (TextView) findViewById(R.id.date_reg);
-        mTextRegister = (TextView) findViewById(R.id.text_reg);
-        mTextDescription = (TextView) findViewById(R.id.description);
-        mTextStatus = (TextView) findViewById(R.id.status);
-        mTextResponsible = (TextView) findViewById(R.id.text_res);
-        mTextResponsible2 = (TextView) findViewById(R.id.text_res2);
-        mTextTitle = (TextView) findViewById(R.id.title);
+        TextView textAssignedDate = (TextView) findViewById(R.id.date_ass);
+        TextView textAssigned = (TextView) findViewById(R.id.text_ass);
+        TextView textCreateDate = (TextView) findViewById(R.id.date_create);
+        TextView textCreate = (TextView) findViewById(R.id.text_create);
+        TextView textRegisterDate = (TextView) findViewById(R.id.date_reg);
+        TextView textRegister = (TextView) findViewById(R.id.text_reg);
+        TextView textDescription = (TextView) findViewById(R.id.description);
+        TextView textStatus = (TextView) findViewById(R.id.status);
+        TextView textResponsible = (TextView) findViewById(R.id.text_res);
+        TextView textResponsible2 = (TextView) findViewById(R.id.text_res2);
+        TextView textTitle = (TextView) findViewById(R.id.title);
 
         View.OnClickListener onClickListener = new View.OnClickListener(){
             @Override
@@ -98,17 +80,29 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        mTextAssignedDate.setOnClickListener(onClickListener);
-        mTextAssigned.setOnClickListener(onClickListener);
-        mTextCreateDate.setOnClickListener(onClickListener);
-        mTextCreate.setOnClickListener(onClickListener);
-        mTextRegisterDate.setOnClickListener(onClickListener);
-        mTextRegister.setOnClickListener(onClickListener);
-        mTextDescription.setOnClickListener(onClickListener);
-        mTextStatus.setOnClickListener(onClickListener);
-        mTextResponsible.setOnClickListener(onClickListener);
-        mTextResponsible2.setOnClickListener(onClickListener);
-        mTextTitle.setOnClickListener(onClickListener);
+        assert textAssignedDate != null;
+        textAssignedDate.setOnClickListener(onClickListener);
+        assert textAssigned != null;
+        textAssigned.setOnClickListener(onClickListener);
+        assert textCreateDate != null;
+        textCreateDate.setOnClickListener(onClickListener);
+        assert textCreate != null;
+        textCreate.setOnClickListener(onClickListener);
+        assert textRegisterDate != null;
+        textRegisterDate.setOnClickListener(onClickListener);
+        assert textRegister != null;
+        textRegister.setOnClickListener(onClickListener);
+        assert textDescription != null;
+        textDescription.setOnClickListener(onClickListener);
+        assert textStatus != null;
+        textStatus.setOnClickListener(onClickListener);
+        assert textResponsible != null;
+        textResponsible.setOnClickListener(onClickListener);
+        assert textResponsible2 != null;
+        textResponsible2.setOnClickListener(onClickListener);
+        assert textTitle != null;
+        textTitle.setOnClickListener(onClickListener);
+        assert mToolbar != null;
         mToolbar.setOnClickListener(onClickListener);
     }
 
@@ -122,5 +116,11 @@ public class MainActivity extends AppCompatActivity {
         mImages.add(new Image(R.drawable.thirdpic));
         mImages.add(new Image(R.drawable.sixthpic));
 
+    }
+
+    /** Initialize recycler view adapter.  */
+    private void initializeAdapter(){
+        RVAdapter adapter = new RVAdapter(mImages);
+        mRecyclerView.setAdapter(adapter);
     }
 }
