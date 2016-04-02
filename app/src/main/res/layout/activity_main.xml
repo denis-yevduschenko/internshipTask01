@@ -75,7 +75,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="@string/date_create"
                         android:id="@+id/date_create"
-                        style="@style/MyStyle"
+                        style="@style/MyStyle.MainText"
                         android:layout_weight="1"
                         />
                 </LinearLayout>
@@ -103,7 +103,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="@string/date_reg"
                         android:id="@+id/date_reg"
-                        style="@style/MyStyle"
+                        style="@style/MyStyle.MainText"
                         android:layout_weight="1" />
                 </LinearLayout>
             </LinearLayout>
@@ -130,7 +130,7 @@
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="@string/date_ass"
                         android:id="@+id/date_ass"
-                        style="@style/MyStyle"
+                        style="@style/MyStyle.MainText"
                         android:layout_weight="1" />
 
                 </LinearLayout>
@@ -155,7 +155,7 @@
                         android:layout_weight="1" />
 
                     <TextView
-                        style="@style/MyStyle"
+                        style="@style/MyStyle.MainText"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="@string/text_responsible2"
                         android:id="@+id/text_res2"

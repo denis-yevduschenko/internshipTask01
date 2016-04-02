@@ -32,11 +32,17 @@
         <item name="android:gravity">left</item>
     </style>
 
+    <style name="MyStyle.MainText">
+        <item name="android:gravity">right</item>
+    </style>
+
     <style name="MyStyle.Title">
         <item name="android:textSize">@dimen/textSizeTitle</item>
         <item name="android:gravity">left</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+
 
     <style name="Divider">
         <item name="android:showDividers">end</item>
@@ -47,5 +53,6 @@
         <item name="android:textColorPrimary">@android:color/white</item>
         <item name="android:textColorSecondary">@android:color/white</item>
         <item name="actionMenuTextColor">@android:color/white</item>
+
     </style>
 </resources>
